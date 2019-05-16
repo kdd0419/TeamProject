@@ -56,7 +56,7 @@ export default {
         if (selectUser.password !== this.password){
           alert('이메일과 비밀번호가 일치하지 않습니다.')
         }else {
-          alert('회원가입을 축하합니다')
+          alert('로그인 완료')
           location.href = 'Home.vue'
         }
       }
