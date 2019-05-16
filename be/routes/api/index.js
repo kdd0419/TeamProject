@@ -26,6 +26,8 @@ router.post('/users', function(req, res, next) {
 router.use('/test', require('./test'));
 router.use('/user', require('./user'));
 
+router.use('/s_user', require('./s_user'));
+
 router.all('*', function(req, res, next) {
   next(createError(404, 'API를 찾을 수 없습니다.'));
 });
