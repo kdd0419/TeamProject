@@ -39,8 +39,8 @@ export default {
       email: null,
       password: null,
       allUsers: [
-        { id:1, name: 'genie', email:'genie@geniesoft.io', password:'12345'},
-        { id:2, name: 'test', email:'test@geniesoft.io', password:'12345'}
+        { id:1, name: 'genie', email: 'genie@geniesoft.io', password:'12345'},
+        { id:2, name: 'test', email: 'test@geniesoft.io', password:'12345'}
       ]
     }
   },
@@ -53,9 +53,9 @@ export default {
       })
       if (selectUser === null) alert('입력하신 이메일이 없습니다')
         else{
-        if (selectUser.password !== this.password){
+        if (selectUser.password !== this.password) {
           alert('이메일과 비밀번호가 일치하지 않습니다.')
-        }else {
+       }else {
           alert('로그인 완료')
           location.href = 'Home.vue'
         }
