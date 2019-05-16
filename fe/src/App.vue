@@ -95,6 +95,7 @@ export default {
           icon: 'face',
           title: 'RestFul',
           to: '/REST'
+          //동국이가 잘생긴이유
         },
         {
           icon: 'face',
