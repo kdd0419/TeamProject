@@ -58,7 +58,7 @@ export default {
           alert('가입된 아이디 입니다.')
         }else {
           this.postUser()
-          //location.href = 'login.vue'
+          location.href = 'login.vue'
         }
       }
       // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다.
