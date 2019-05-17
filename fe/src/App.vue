@@ -43,9 +43,15 @@
       </v-btn>
       <v-toolbar-title v-text="title"></v-toolbar-title>
       <v-spacer></v-spacer>
+      <v-btn color="info" @click="dialog = true">로그인</v-btn>
       <v-btn icon @click.stop="rightDrawer = !rightDrawer">
         <v-icon>menu</v-icon>
       </v-btn>
+      <v-dialog v-model="dialog">
+        <login>
+
+        </login>
+      </v-dialog>
     </v-toolbar>
     <v-content>
       <router-view/>
@@ -73,7 +79,7 @@
 </template>
 
 <script>
-
+import login from './views/login.vue'
 export default {
   name: 'App',
   data () {
@@ -96,18 +102,18 @@ export default {
           icon: 'face',
           title: 'RestFul',
           to: '/REST'
-        },
-        {
-          icon: 'face',
-          title: 'login',
-          to: '/login'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Vuetify.js',
+      dialog: false
     }
-  }
+  },
+    components: {
+      'login': login
+    }
+
 }
 </script>

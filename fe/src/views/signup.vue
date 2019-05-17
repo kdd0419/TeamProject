@@ -61,8 +61,9 @@ export default {
   mounted () {
     this.getUsers()
   },
+
   methods: {
-    login() {
+    login () {
       // 전체 유저에서 해당 이메일로 유저를 찾는다.
       let selectUser = null
       this.allUsers.forEach(user =>{
@@ -73,10 +74,17 @@ export default {
         if (selectUser !== null){
           alert('가입된 아이디 입니다.')
         }else {
-          this.postUser()
-          location.href = '/login'
+            let rule = /^[a-z0-9_-]+$/
+            console.log(rule.test(this.password))
+            if(rule.test(this.password)===true){
+              this.postUser()
+              location.href = '/login'
+            }else{
+              alert('비밀번호가 형식에 맞지 않습니다.')
+            }
+          }
+
         }
-      }
       // 그 유저의 비밀번호와 입력된 비밀번호를 비교한다.
       console.log(this.email, this.password, this.allUsers)
     },
@@ -107,7 +115,8 @@ export default {
           console.error(e.message)
           this.pop('e.message')
         })
-    }
+    },
+
   }
 }
 </script>
