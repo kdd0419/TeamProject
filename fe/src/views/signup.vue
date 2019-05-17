@@ -74,7 +74,7 @@ export default {
         if (selectUser !== null){
           alert('가입된 아이디 입니다.')
         }else {
-            let rule = /^[a-z0-9_-]+$/
+            let rule = /^[A-Za-z0-9_-]+$/
             console.log(rule.test(this.password))
             if(rule.test(this.password)===true){
               this.postUser()
