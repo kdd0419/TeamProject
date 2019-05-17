@@ -10,13 +10,16 @@
             <v-text-field
                 v-model="email"
                 label="이메일"
-
+                :rules="[() => !!email || 'E-mail is required']"
             >
             </v-text-field>
             <v-text-field
                 v-model="password"
                 label="비밀번호(영문자, 숫자 포함)"
                 type="password"
+                :rules="[
+                  () => !!password || 'password is required',
+                ]"
             >
             </v-text-field>
             <v-text-field
@@ -63,7 +66,7 @@ export default {
       // 전체 유저에서 해당 이메일로 유저를 찾는다.
       let selectUser = null
       this.allUsers.forEach(user =>{
-        if(user.name === this.email) selectUser = user
+        if(user.id === this.email) selectUser = user
       })
       if (this.email === null) alert('아이디가 없습니다')
         else{
