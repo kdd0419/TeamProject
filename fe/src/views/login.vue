@@ -28,6 +28,7 @@
           </div>
         </v-card>
       </v-flex>
+      <v-btn color="info" href="/signup">회원가입</v-btn>
     </v-layout>
   </v-container>
 </template>
